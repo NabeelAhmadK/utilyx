@@ -1,4 +1,4 @@
-# My Utils
+# Utilaide
 
 A comprehensive collection of utility functions for common JavaScript/TypeScript operations.
 
