@@ -84,3 +84,32 @@ export function deepEqual(a: any, b: any): boolean {
 
     return false
 }
+
+export function generateTokenBase64(length: number = 32): string {
+    const cryptoObj =
+        typeof window !== 'undefined' && window.crypto
+            ? window.crypto
+            : typeof globalThis !== 'undefined' && (globalThis as any).crypto
+                ? (globalThis as any).crypto
+                : null;
+
+    if (!cryptoObj?.getRandomValues) {
+        throw new Error('Secure crypto not available in this environment.');
+    }
+
+    const bytes = new Uint8Array(length);
+    cryptoObj.getRandomValues(bytes);
+
+    // Convert bytes to base64 string
+    if (typeof window !== 'undefined' && typeof btoa === 'function') {
+        // Browser-safe
+        const binary = String.fromCharCode(...bytes);
+        return btoa(binary);
+    } else if (typeof Buffer !== 'undefined') {
+        // Node.js
+        return Buffer.from(bytes).toString('base64');
+    } else {
+        throw new Error('No base64 encoding method available.');
+    }
+}
+
