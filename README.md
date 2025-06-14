@@ -23,9 +23,16 @@ import {
   degToRad,
   celsiusToFahrenheit,
   fahrenheitToCelsius,
+  uuid,
   generateSlug,
+  truncateText,
+  isEmail,
+  isURL,
+  randomHexColor,
   debounce,
   throttle,
+  deepClone,
+  deepEqual,
   shuffleArray,
   uniqueArray,
   copyToClipboard,
@@ -122,6 +129,13 @@ fahrenheitToCelsius(32) // Returns: 0
 
 ### String Utilities
 
+#### `uuid(): string`
+Generates a random UUID (v4 style).
+
+```typescript
+uuid() // Returns: "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
+```
+
 #### `generateSlug(str: string): string`
 Generates a URL-friendly slug from a string.
 
@@ -129,11 +143,45 @@ Generates a URL-friendly slug from a string.
 generateSlug('Hello World!') // Returns: "hello-world"
 ```
 
+#### `truncateText(str: string, len: number): string`
+Truncates text to a specified length and adds ellipsis.
+
+```typescript
+truncateText('Hello World', 5) // Returns: "Hello..."
+```
+
 #### `capitalize(str: string): string`
 Capitalizes the first letter of a string.
 
 ```typescript
 capitalize('hello') // Returns: "Hello"
+```
+
+### Validation Utilities
+
+#### `isEmail(str: string): boolean`
+Validates if a string is a valid email address.
+
+```typescript
+isEmail('user@example.com') // Returns: true
+isEmail('invalid-email') // Returns: false
+```
+
+#### `isURL(str: string): boolean`
+Validates if a string is a valid URL.
+
+```typescript
+isURL('https://example.com') // Returns: true
+isURL('not-a-url') // Returns: false
+```
+
+### Color Utilities
+
+#### `randomHexColor(): string`
+Generates a random hex color code.
+
+```typescript
+randomHexColor() // Returns: "#1a2b3c"
 ```
 
 ### Array Utilities
@@ -170,6 +218,23 @@ Creates a throttled function that only invokes the provided function at most onc
 const throttledFn = throttle(() => console.log('throttled'), 1000);
 ```
 
+### Object Utilities
+
+#### `deepClone<T>(obj: T): T`
+Creates a deep clone of an object.
+
+```typescript
+const original = { a: { b: 1 } };
+const cloned = deepClone(original);
+```
+
+#### `deepEqual(a: any, b: any): boolean`
+Performs a deep equality check between two values.
+
+```typescript
+deepEqual({ a: 1, b: { c: 2 } }, { a: 1, b: { c: 2 } }) // Returns: true
+```
+
 ### Browser Utilities
 
 #### `copyToClipboard(str: string): Promise<void>`
@@ -201,6 +266,7 @@ npm install
 
 # Build the library
 npm run build
+```
 
 ## Contributing
 
