@@ -16,11 +16,7 @@ import {
   getTimeDiff,
   formatDate,
   isLeapYear,
-  msToTime,
-  hexToRgb,
-  rgbToHex,
   toTitleCase,
-  degToRad,
   celsiusToFahrenheit,
   fahrenheitToCelsius,
   uuid,
@@ -85,32 +81,11 @@ Converts milliseconds to a human-readable time format.
 msToTime(90061) // Returns: "1m 30s"
 ```
 
-#### `hexToRgb(hex: string): { r: number, g: number, b: number }`
-Converts a hex color code to RGB values.
-
-```typescript
-hexToRgb('#FF0000') // Returns: { r: 255, g: 0, b: 0 }
-```
-
-#### `rgbToHex(r: number, g: number, b: number): string`
-Converts RGB values to a hex color code.
-
-```typescript
-rgbToHex(255, 0, 0) // Returns: "#ff0000"
-```
-
 #### `toTitleCase(str: string): string`
 Converts a string to title case.
 
 ```typescript
 toTitleCase('hello world') // Returns: "Hello World"
-```
-
-#### `degToRad(deg: number): number`
-Converts degrees to radians.
-
-```typescript
-degToRad(180) // Returns: π
 ```
 
 #### `celsiusToFahrenheit(c: number): number`
