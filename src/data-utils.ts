@@ -1,5 +1,5 @@
 // 1. uuid: Generate a random UUID (v4 style)
-export function uuid(): string {
+export function randomUUID(): string {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
         const r = (Math.random() * 16) | 0
         const v = c === 'x' ? r : (r & 0x3) | 0x8
@@ -7,8 +7,8 @@ export function uuid(): string {
     })
 }
 
-// 2. generateSlug: "Hello World" → "hello-world"
-export function generateSlug(str: string): string {
+// 2. slugify: "Hello World" → "hello-world"
+export function slugify(str: string): string {
     return str
         .toLowerCase()
         .trim()
