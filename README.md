@@ -15,12 +15,9 @@ import {
   timeAgo,
   getTimeDiff,
   formatDate,
-  isLeapYear,
   toTitleCase,
-  celsiusToFahrenheit,
-  fahrenheitToCelsius,
-  uuid,
-  generateSlug,
+  randomUUID,
+  slugify,
   truncateText,
   isEmail,
   isURL,
@@ -32,7 +29,7 @@ import {
   shuffleArray,
   uniqueArray,
   copyToClipboard,
-  capitalize,
+  toTitleCase,
   localStorageUtils
 } from 'utilaide';
 ```
@@ -64,14 +61,6 @@ Formats a date according to the specified format string.
 formatDate(new Date(), 'YYYY-MM-DD') // Returns: "2024-03-22"
 ```
 
-#### `isLeapYear(year: number): boolean`
-Checks if a given year is a leap year.
-
-```typescript
-isLeapYear(2024) // Returns: true
-isLeapYear(2023) // Returns: false
-```
-
 ### Conversion Utilities
 
 #### `msToTime(ms: number): string`
@@ -88,34 +77,20 @@ Converts a string to title case.
 toTitleCase('hello world') // Returns: "Hello World"
 ```
 
-#### `celsiusToFahrenheit(c: number): number`
-Converts Celsius to Fahrenheit.
-
-```typescript
-celsiusToFahrenheit(0) // Returns: 32
-```
-
-#### `fahrenheitToCelsius(f: number): number`
-Converts Fahrenheit to Celsius.
-
-```typescript
-fahrenheitToCelsius(32) // Returns: 0
-```
-
 ### String Utilities
 
-#### `uuid(): string`
+#### `randomUUID(): string`
 Generates a random UUID (v4 style).
 
 ```typescript
-uuid() // Returns: "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
+randomUUID() // Returns: "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
 ```
 
-#### `generateSlug(str: string): string`
+#### `slugify(str: string): string`
 Generates a URL-friendly slug from a string.
 
 ```typescript
-generateSlug('Hello World!') // Returns: "hello-world"
+slugify('Hello World!') // Returns: "hello-world"
 ```
 
 #### `truncateText(str: string, len: number): string`
@@ -125,11 +100,11 @@ Truncates text to a specified length and adds ellipsis.
 truncateText('Hello World', 5) // Returns: "Hello..."
 ```
 
-#### `capitalize(str: string): string`
-Capitalizes the first letter of a string.
+#### `toTitleCase(str: string): string`
+capitalize the first letter of a string.
 
 ```typescript
-capitalize('hello') // Returns: "Hello"
+toTitleCase('hello') // Returns: "Hello"
 ```
 
 ### Validation Utilities
