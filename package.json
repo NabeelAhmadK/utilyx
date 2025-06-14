@@ -1,0 +1,26 @@
+{
+  "name": "utilaide",
+  "version": "1.0.0",
+  "description": "A utility helper library 🔧🔥",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "utils",
+    "typescript",
+    "conversion",
+    "helper",
+    "devtools"
+  ],
+  "author": "Nabeel Ahmad Khan",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest run",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}
