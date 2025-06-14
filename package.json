@@ -14,13 +14,17 @@
   "author": "Nabeel Ahmad Khan",
   "license": "MIT",
   "scripts": {
-    "test": "vitest run",
-    "typescript": "^5.0.0",
-    "vitest": "^1.0.0",
     "build": "tsc",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "dev": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "directories": {
     "test": "tests"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
   }
 }
