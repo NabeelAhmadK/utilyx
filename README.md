@@ -107,6 +107,13 @@ capitalize the first letter of a string.
 toTitleCase('hello') // Returns: "Hello"
 ```
 
+#### `generateTokenBase64(length?: number): string`
+Generates a cryptographically secure random token encoded in base64.
+
+```typescript
+generateTokenBase64(16); // 'QkVmX1ZydXNvYkZBS3pWag==' (base64 string of 16 random bytes)
+```
+
 ### Validation Utilities
 
 #### `isEmail(str: string): boolean`
