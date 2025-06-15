@@ -1,18 +1,36 @@
 {
   "name": "utilaide",
   "version": "1.0.7",
-  "description": "A utility helper library 🔧🔥",
+  "description": "Modern utility helper library for cleaner, faster TypeScript/JavaScript development 🚀🔧",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
-    "utils",
-    "typescript",
-    "conversion",
-    "helper",
-    "devtools"
+    "utilities",
+    "utility",
+    "toolkit",
+    "snippets",
+    "javascript",
+    "ts",
+    "functions",
+    "helpers",
+    "common",
+    "shared",
+    "npm",
+    "lightweight",
+    "modular",
+    "bundle",
+    "core",
+    "micro",
+    "js-utils",
+    "code-utils",
+    "productivity"
   ],
   "author": "Nabeel Ahmad Khan",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NabeelAhmadK/utilaide.git"
+  },
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
