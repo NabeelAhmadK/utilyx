@@ -15,14 +15,14 @@ import {
   timeAgo,
   getTimeDiff,
   formatDate,
+  msToTime,
   toTitleCase,
-  randomUUID,
-  slugify,
   truncateText,
+  randomUUID,
+  slugify,  
   isEmail,
   isURL,
   generateTokenBase64,
-  randomHexColor,
   debounce,
   throttle,
   deepClone,
@@ -30,7 +30,6 @@ import {
   shuffleArray,
   uniqueArray,
   copyToClipboard,
-  toTitleCase,
   localStorageUtils
 } from 'utilaide';
 ```
@@ -131,15 +130,6 @@ Validates if a string is a valid URL.
 ```typescript
 isURL('https://example.com') // Returns: true
 isURL('not-a-url') // Returns: false
-```
-
-### Color Utilities
-
-#### `randomHexColor(): string`
-Generates a random hex color code.
-
-```typescript
-randomHexColor() // Returns: "#1a2b3c"
 ```
 
 ### Array Utilities
