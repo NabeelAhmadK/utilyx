@@ -216,9 +216,31 @@ npm install
 npm run build
 ```
 
-## Contributing
+---
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 💬 Why utilyx?
+
+> A modern utility toolkit that doesn’t try to be lodash — just the stuff you actually use, written clean, typed tight.
+
+Built for creators, side-projects, frameworks, and startups who don’t want to waste time reinventing functions again.
+
+---
+
+## 🔮 Coming Soon
+
+- 📦 Native ESM build
+- 💅 React UI utils (buttons, modals, etc.)
+- 🌐 CDN-friendly version
+
+---
+
+## 🤝 Contribute
+
+Want to add your favorite utility?\
+Open an [issue](https://github.com/NabeelAhmadK/utilyx/issues) or [pull request](https://github.com/NabeelAhmadK/utilyx/pulls) — let’s build this together 💪
+
+---
+
 
 ## License
 
