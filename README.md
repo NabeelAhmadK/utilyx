@@ -1,11 +1,11 @@
-# Utilaide
+# Utilyx
 
 A comprehensive collection of utility functions for common JavaScript/TypeScript operations.
 
 ## Installation
 
 ```bash
-npm install utilaide
+npm install utilyx
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ import {
   uniqueArray,
   copyToClipboard,
   localStorageUtils
-} from 'utilaide';
+} from 'utilyx';
 ```
 
 ## Available Functions

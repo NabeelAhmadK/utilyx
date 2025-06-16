@@ -1,5 +1,5 @@
 {
-  "name": "utilaide",
+  "name": "utilyx",
   "version": "1.0.8",
   "description": "Modern utility helper library for cleaner, faster TypeScript/JavaScript development 🚀🔧",
   "main": "dist/index.js",
@@ -29,7 +29,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NabeelAhmadK/utilaide.git"
+    "url": "https://github.com/NabeelAhmadK/utilyx.git"
   },
   "scripts": {
     "build": "tsc",
