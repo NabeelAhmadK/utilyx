@@ -1,6 +1,6 @@
 {
   "name": "utilyx",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Modern utility helper library for cleaner, faster TypeScript/JavaScript development 🚀🔧",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
