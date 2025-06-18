@@ -22,6 +22,14 @@ import {
   slugify,  
   isEmail,
   isURL,
+  camelToSnake,
+  snakeToCamel,
+  reverseString,
+  countWords,
+  isPalindrome,
+  trimExtraSpaces,
+  maskEmail,
+  generateRandomString,
   generateTokenBase64,
   debounce,
   throttle,
@@ -30,15 +38,8 @@ import {
   shuffleArray,
   uniqueArray,
   copyToClipboard,
-  localStorageUtils,
-  camelToSnake,
-  snakeToCamel,
-  reverseString,
-  countWords,
-  isPalindrome,
-  trimExtraSpaces,
-  maskEmail,
-  generateRandomString
+  localStorageUtils
+ 
 } from 'utilyx';
 ```
 
