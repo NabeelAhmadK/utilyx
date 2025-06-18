@@ -30,7 +30,15 @@ import {
   shuffleArray,
   uniqueArray,
   copyToClipboard,
-  localStorageUtils
+  localStorageUtils,
+  camelToSnake,
+  snakeToCamel,
+  reverseString,
+  countWords,
+  isPalindrome,
+  trimExtraSpaces,
+  maskEmail,
+  generateRandomString
 } from 'utilyx';
 ```
 
@@ -70,14 +78,93 @@ Converts milliseconds to a human-readable time format.
 msToTime(90061) // Returns: "1m 30s"
 ```
 
-#### `toTitleCase(str: string): string`
-Converts a string to title case.
+### String Utilities
+
+#### `toTitleCase(str: string, lowercaseRest?: boolean): string`
+Converts a string to title case (capitalizes first letter of each word).
 
 ```typescript
 toTitleCase('hello world') // Returns: "Hello World"
+toTitleCase('hElLo wOrLd', false) // Returns: "HElLo WOrLd"
 ```
 
-### String Utilities
+#### `camelToSnake(str: string, uppercase?: boolean): string`
+Converts camelCase to snake_case.
+
+```typescript
+camelToSnake('myVarName') // Returns: "my_var_name"
+camelToSnake('myVarName', true) // Returns: "MY_VAR_NAME"
+```
+
+#### `snakeToCamel(str: string, pascal?: boolean): string`
+Converts snake_case to camelCase.
+
+```typescript
+snakeToCamel('my_var_name') // Returns: "myVarName"
+snakeToCamel('my_var_name', true) // Returns: "MyVarName"
+```
+
+#### `slugify(str: string, separator?: string, preserveCase?: boolean): string`
+Generates a URL-friendly slug from a string.
+
+```typescript
+slugify('Hello World!') // Returns: "hello-world"
+slugify('Hello World!', '_', true) // Returns: "Hello_World"
+```
+
+#### `truncateText(str: string, maxLength: number, ellipsis?: string, preserveWords?: boolean): string`
+Truncates text to a specified length and adds ellipsis.
+
+```typescript
+truncateText('Hello World', 8) // Returns: "Hello..."
+truncateText('Hello World', 8, '..', false) // Returns: "Hello wo.."
+```
+
+#### `reverseString(str: string): string`
+Reverses a string.
+
+```typescript
+reverseString('hello') // Returns: "olleh"
+```
+
+#### `countWords(str: string): number`
+Counts words in a string (split by spaces).
+
+```typescript
+countWords('Hello world') // Returns: 2
+countWords('') // Returns: 0
+```
+
+#### `isPalindrome(str: string, caseSensitive?: boolean, ignoreSpaces?: boolean): boolean`
+Checks if a string is a palindrome.
+
+```typescript
+isPalindrome('Madam') // Returns: true
+isPalindrome('A man a plan a canal Panama') // Returns: true
+isPalindrome('Racecar', true) // Returns: false
+```
+
+#### `trimExtraSpaces(str: string): string`
+Trims extra spaces between words.
+
+```typescript
+trimExtraSpaces('Hello   world') // Returns: "Hello world"
+```
+
+#### `maskEmail(email: string): string`
+Masks the local part of an email address.
+
+```typescript
+maskEmail('user@domain.com') // Returns: "us**@domain.com"
+```
+
+#### `generateRandomString(length?: number, options?: object): string`
+Generates a random string with customizable options.
+
+```typescript
+generateRandomString(8) // Returns: "A3b7GhK9"
+generateRandomString(6, { includeNumbers: false }) // Returns: "aBcDef"
+```
 
 #### `randomUUID(): string`
 Generates a random UUID (v4 style).
@@ -86,32 +173,11 @@ Generates a random UUID (v4 style).
 randomUUID() // Returns: "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
 ```
 
-#### `slugify(str: string): string`
-Generates a URL-friendly slug from a string.
-
-```typescript
-slugify('Hello World!') // Returns: "hello-world"
-```
-
-#### `truncateText(str: string, len: number): string`
-Truncates text to a specified length and adds ellipsis.
-
-```typescript
-truncateText('Hello World', 5) // Returns: "Hello..."
-```
-
-#### `toTitleCase(str: string): string`
-capitalize the first letter of a string.
-
-```typescript
-toTitleCase('hello') // Returns: "Hello"
-```
-
 #### `generateTokenBase64(length?: number): string`
 Generates a cryptographically secure random token encoded in base64.
 
 ```typescript
-generateTokenBase64(16); // 'QkVmX1ZydXNvYkZBS3pWag==' (base64 string of 16 random bytes)
+generateTokenBase64(16) // Returns: 'QkVmX1ZydXNvYkZBS3pWag==' (base64 string of 16 random bytes)
 ```
 
 ### Validation Utilities
@@ -220,9 +286,9 @@ npm run build
 
 ## 💬 Why utilyx?
 
-> A modern utility toolkit that doesn’t try to be lodash — just the stuff you actually use, written clean, typed tight.
+> A modern utility toolkit that doesn't try to be lodash — just the stuff you actually use, written clean, typed tight.
 
-Built for creators, side-projects, frameworks, and startups who don’t want to waste time reinventing functions again.
+Built for creators, side-projects, frameworks, and startups who don't want to waste time reinventing functions again.
 
 ---
 
@@ -237,7 +303,7 @@ Built for creators, side-projects, frameworks, and startups who don’t want to 
 ## 🤝 Contribute
 
 Want to add your favorite utility?\
-Open an [issue](https://github.com/NabeelAhmadK/utilyx/issues) or [pull request](https://github.com/NabeelAhmadK/utilyx/pulls) — let’s build this together 💪
+Open an [issue](https://github.com/NabeelAhmadK/utilyx/issues) or [pull request](https://github.com/NabeelAhmadK/utilyx/pulls) — let's build this together 💪
 
 ---
 
