@@ -7,40 +7,6 @@ export function randomUUID(): string {
     })
 }
 
-// 2. slugify: "Hello World" → "hello-world"
-export function slugify(str: string): string {
-    return str
-        .toLowerCase()
-        .trim()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .replace(/\s+/g, '-')
-}
-
-// 3. truncateText: cut it off + add ellipsis
-export function truncateText(str: string, len: number): string {
-    return str.length <= len ? str : str.slice(0, len).trimEnd() + '...'
-}
-
-// 4. isEmail: legit email or nah
-export function isEmail(str: string): boolean {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str)
-}
-
-// 5. isURL: safe basic URL checker
-export function isURL(str: string): boolean {
-    try {
-        new URL(str)
-        return true
-    } catch {
-        return false
-    }
-}
-
-// 6. randomHexColor: 🎨 magic
-export function randomHexColor(): string {
-    return `#${Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0')}`
-}
-
 // 7. debounce: stop spamming, chill
 export function debounce<T extends (...args: any[]) => void>(fn: T, delay: number) {
     let timer: ReturnType<typeof setTimeout>

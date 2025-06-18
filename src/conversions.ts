@@ -15,15 +15,6 @@ export function humanReadableToBytes(str: string): number {
   return Math.round(parseFloat(num) * Math.pow(1024, exponent))
 }
 
-// 3. camelToSnake: "myVarName" → "my_var_name"
-export function camelToSnake(str: string): string {
-  return str.replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase()
-}
-
-// 4. snakeToCamel: "my_var_name" → "myVarName"
-export function snakeToCamel(str: string): string {
-  return str.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase())
-}
 
 // 5. msToTime: 90061 → "1m 30s"
 export function msToTime(ms: number): string {
@@ -46,11 +37,6 @@ export function hexToRgb(hex: string): { r: number; g: number; b: number } {
 // 7. rgbToHex: (255, 255, 255) → "#ffffff"
 export function rgbToHex(r: number, g: number, b: number): string {
   return `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`
-}
-
-// 8. toTitleCase: "hello world" → "Hello World"
-export function toTitleCase(str: string): string {
-  return str.replace(/\w\S*/g, word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
 }
 
 // 9. degToRad: 180 → π
